@@ -526,21 +526,6 @@
       line-height: 1.6;
     }
 
-    .video-error {
-      margin-top: 8px;
-      color: #8a5260;
-      font-size: 0.88rem;
-    }
-
-    .video-download {
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    .video-download:hover {
-      text-decoration: underline;
-    }
-
     /* =========================
        Metrics
        ========================= */
@@ -772,17 +757,6 @@
               Paper
             </a>
 
-            <!-- 修改为正式 arXiv 链接 -->
-            <a
-              class="btn"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-solid fa-book-open"></i>
-              arXiv
-            </a>
-
             <a
               class="btn"
               href="https://github.com/xuefanfu/DBFly"
@@ -836,37 +810,20 @@
           </p>
         </div>
 
-        <div class="card">
+        <div class="card content">
 
-          <!--
-          上传图片后可以删除下面的 placeholder，
-          然后取消 overview-image 的注释。
-          图片路径建议为 assets/teaser.png。
-          -->
+          <p>
+            <strong>Task.</strong>
+            DBFly addresses UAV see-and-reach navigation, where an aerial
+            agent must approach and stop near a language-specified target
+            using egocentric visual observations.
+          </p>
 
-          <div class="overview-placeholder">
-            <i class="fa-regular fa-image"></i>
-            <strong>DBFly Teaser Figure</strong>
-            <span>
-              Upload your overview image as
-              <code>assets/teaser.png</code>.
-            </span>
-          </div>
-
-          <!--
-          <img
-            class="overview-image"
-            src="assets/teaser.png"
-            alt="Overview of the DBFly framework"
-          >
-          -->
-
-          <p class="caption">
-            <strong>Overview of DBFly.</strong>
-            <!-- DBFly progressively performs target-direction anchoring,
-            spatial diagnosis, and maneuver decision before continuous
-            waypoint prediction. It further determines whether navigation
-            should terminate using terminal-convergence-aware stopping. -->
+          <p>
+            <strong>Core idea.</strong>
+            Instead of directly mapping multimodal inputs to continuous
+            waypoints, DBFly performs structured spatial deliberation to
+            regulate maneuver planning and navigation termination.
           </p>
 
         </div>
@@ -948,75 +905,32 @@
           </p>
         </div>
 
-        <div class="grid-2">
+        <div class="card">
 
-          <div class="card">
-
-            <div class="overview-placeholder">
-              <i class="fa-solid fa-diagram-project"></i>
-              <strong>DBFly Framework Architecture</strong>
-              <span>
-                Upload the framework image as
-                <code>assets/pipeline.png</code>.
-              </span>
-            </div>
-
-            <!--
-            <img
-              class="overview-image"
-              src="assets/pipeline.png"
-              alt="Architecture of DBFly"
-            >
-            -->
-
-            <p class="caption">
-              <strong>Framework architecture.</strong>
-              The multimodal backbone receives visual observations,
-              <!-- navigation instructions, and geometric support, and produces
-              structured spatial deliberation, stopping decisions, and
-              continuous waypoints. -->
-            </p>
-
+          <div class="overview-placeholder">
+            <i class="fa-solid fa-diagram-project"></i>
+            <strong>DBFly Framework Architecture</strong>
+            <span>
+              Upload the framework image as
+              <code>assets/pipeline.png</code>.
+            </span>
           </div>
 
-          <div class="card method-card content">
+          <!--
+          <img
+            class="overview-image"
+            src="assets/pipeline.png"
+            alt="Architecture of DBFly"
+          >
+          -->
 
-            <h3>
-              Core Components
-            </h3>
-
-            <ul class="method-list">
-
-              <li>
-                <!-- <strong>Spatial Maneuver Decision Chain.</strong>
-                DBFly progressively performs target-direction anchoring,
-                spatial diagnosis, and maneuver decision before predicting
-                continuous waypoints. -->
-              </li>
-
-              <li>
-                <!-- <strong>Implicit Flight Corridor.</strong> -->
-                <!-- A target-relevant geometric constraint provides soft spatial
-                support for online diagnosis and closed-loop waypoint
-                correction. -->
-              </li>
-
-              <li>
-                <!-- <strong>Terminal-Convergence-Aware Stopping.</strong>
-                Navigation termination is determined by target proximity
-                together with short-horizon trajectory convergence rather
-                than by a single-frame distance threshold alone. -->
-              </li>
-
-              <li>
-                <!-- <strong>Vision-Language Backbone.</strong>
-                A Qwen3-VL-based multimodal model generates structured
-                navigation decisions and executable waypoint predictions. -->
-              </li>
-
-            </ul>
-
-          </div>
+          <p class="caption">
+            <strong>Framework architecture.</strong>
+            The multimodal backbone receives visual observations,
+            <!-- navigation instructions, and geometric support, and produces
+            structured spatial deliberation, stopping decisions, and
+            continuous waypoints. -->
+          </p>
 
         </div>
 
@@ -1036,19 +950,19 @@
           </h2>
 
           <p class="section-description">
-            Representative flight demonstrations in seen, unseen-object,
-            and unseen-scene simulation environments.
+            Representative closed-loop flight demonstrations in
+            high-fidelity simulation environments.
           </p>
         </div>
 
         <div class="grid-3">
 
-          <!-- Seen scene -->
+          <!-- Simulation demo 1 -->
           <article class="card card-hover video-card">
 
             <h3 class="video-title">
               <i class="fa-solid fa-city"></i>
-              Seen Scene
+              Simulation Demo 1
             </h3>
 
             <div class="video-wrap">
@@ -1068,28 +982,19 @@
             </div>
 
             <p class="video-note">
-              Navigation demonstration in a scene observed during training.
+              Closed-loop navigation demonstrating target exploration,
+              approach, and stable stopping.
             </p>
 
-            <p class="video-error">
-              Video path:
-              <a
-                class="video-download"
-                href="video/sim_seen.mp4"
-                target="_blank"
-              >
-                video/sim_seen.mp4
-              </a>
-            </p>
 
           </article>
 
-          <!-- Unseen object -->
+          <!-- Simulation demo 2 -->
           <article class="card card-hover video-card">
 
             <h3 class="video-title">
               <i class="fa-solid fa-cube"></i>
-              Unseen Object
+              Simulation Demo 2
             </h3>
 
             <div class="video-wrap">
@@ -1109,28 +1014,19 @@
             </div>
 
             <p class="video-note">
-              Navigation toward an object category not observed during training.
+              Closed-loop navigation demonstrating directional realignment
+              and accurate target approach.
             </p>
 
-            <p class="video-error">
-              Video path:
-              <a
-                class="video-download"
-                href="video/sim_uo.mp4"
-                target="_blank"
-              >
-                video/sim_uo.mp4
-              </a>
-            </p>
 
           </article>
 
-          <!-- Unseen scene -->
+          <!-- Simulation demo 3 -->
           <article class="card card-hover video-card">
 
             <h3 class="video-title">
               <i class="fa-solid fa-map-location-dot"></i>
-              Unseen Scene
+              Simulation Demo 3
             </h3>
 
             <div class="video-wrap">
@@ -1150,19 +1046,10 @@
             </div>
 
             <p class="video-note">
-              Navigation demonstration in an environment not observed during training.
+              Closed-loop navigation demonstrating descent, local correction,
+              and terminal convergence.
             </p>
 
-            <p class="video-error">
-              Video path:
-              <a
-                class="video-download"
-                href="video/sim_us.mp4"
-                target="_blank"
-              >
-                video/sim_us.mp4
-              </a>
-            </p>
 
           </article>
 
@@ -1220,16 +1107,6 @@
               demonstrating target approaching and reliable navigation termination.
             </p>
 
-            <p class="video-error">
-              Video path:
-              <a
-                class="video-download"
-                href="video/flight_1.mp4"
-                target="_blank"
-              >
-                video/flight_1.mp4
-              </a>
-            </p>
 
           </article>
 
@@ -1262,16 +1139,6 @@
               demonstrating closed-loop correction and terminal convergence.
             </p>
 
-            <p class="video-error">
-              Video path:
-              <a
-                class="video-download"
-                href="video/flight_2.mp4"
-                target="_blank"
-              >
-                video/flight_2.mp4
-              </a>
-            </p>
 
           </article>
 
@@ -1334,70 +1201,6 @@
             <div class="metric-label">
               Cross-Setting Generalization
             </div>
-          </div>
-
-        </div>
-
-        <div style="height: 24px;"></div>
-
-        <div class="grid-2">
-
-          <div class="card">
-
-            <div class="overview-placeholder">
-              <i class="fa-solid fa-chart-line"></i>
-              <strong>Qualitative Results</strong>
-              <span>
-                Upload the visualization as
-                <code>assets/qualitative.png</code>.
-              </span>
-            </div>
-
-            <!--
-            <img
-              class="overview-image"
-              src="assets/qualitative.png"
-              alt="Qualitative results of DBFly"
-            >
-            -->
-
-            <p class="caption">
-              Representative trajectory visualizations and navigation
-              examples from simulation and real-world evaluations.
-            </p>
-
-          </div>
-
-          <div class="card method-card content">
-
-            <h3>
-              Key Advantages
-            </h3>
-
-            <ul class="method-list">
-
-              <!-- <li>
-                Explicitly bridges high-level vision-language understanding
-                and low-level executable waypoint control. -->
-              </li>
-
-              <li>
-                <!-- Improves maneuver consistency through structured
-                vision-guided spatial deliberation. -->
-              </li>
-
-              <li>
-                <!-- Enhances stopping reliability near the target through
-                terminal-convergence-aware termination modeling. -->
-              </li>
-
-              <li>
-                <!-- Demonstrates strong performance in high-fidelity simulation
-                and promising applicability in real-world UAV experiments. -->
-              </li>
-
-            </ul>
-
           </div>
 
         </div>
