@@ -451,33 +451,6 @@
     }
 
     /* =========================
-       Method
-       ========================= */
-
-    .method-card h3 {
-      margin: 0 0 15px;
-      font-size: 1.22rem;
-    }
-
-    .method-list {
-      margin: 0;
-      padding-left: 22px;
-      color: #2a3242;
-    }
-
-    .method-list li {
-      margin-bottom: 14px;
-    }
-
-    .method-list li:last-child {
-      margin-bottom: 0;
-    }
-
-    .method-list strong {
-      color: var(--primary-dark);
-    }
-
-    /* =========================
        Video
        ========================= */
 
@@ -691,7 +664,6 @@
       <div class="nav-links">
         <a href="#overview">Overview</a>
         <a href="#abstract">Abstract</a>
-        <a href="#method">Method</a>
         <a href="#simulation">Simulation</a>
         <a href="#real-world">Real World</a>
         <a href="#results">Results</a>
@@ -816,20 +788,31 @@
           </p>
         </div>
 
-        <div class="card content">
+        <div class="card">
 
-          <p>
-            <strong>Task.</strong>
-            DBFly addresses UAV see-and-reach navigation, where an aerial
-            agent must approach and stop near a language-specified target
-            using egocentric visual observations.
-          </p>
+          <div class="overview-placeholder">
+            <i class="fa-solid fa-diagram-project"></i>
+            <strong>DBFly Framework Architecture</strong>
+            <span>
+              Upload the overview image as
+              <code>assets/pipeline.png</code>.
+            </span>
+          </div>
 
-          <p>
-            <strong>Core idea.</strong>
-            Instead of directly mapping multimodal inputs to continuous
-            waypoints, DBFly performs structured spatial deliberation to
-            regulate maneuver planning and navigation termination.
+          <!--
+          <img
+            class="overview-image"
+            src="assets/pipeline.png"
+            alt="Overview of DBFly"
+          >
+          -->
+
+          <p class="caption">
+            <strong>Overview of DBFly.</strong>
+            The multimodal backbone receives visual observations,
+            <!-- navigation instructions, and geometric support, and produces
+            structured spatial deliberation, stopping decisions, and
+            continuous waypoints. -->
           </p>
 
         </div>
@@ -887,55 +870,6 @@
             unseen-object, and unseen-scene test settings demonstrate that
             DBFly consistently outperforms strong baseline methods and
             exhibits promising applicability in real-world UAV navigation. -->
-          </p>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =========================
-         Method
-         ========================= -->
-
-    <section id="method">
-      <div class="container">
-
-        <div class="section-header">
-          <h2 class="section-title">
-            Method
-          </h2>
-
-          <p class="section-description">
-            The overall architecture and principal components of DBFly.
-          </p>
-        </div>
-
-        <div class="card">
-
-          <div class="overview-placeholder">
-            <i class="fa-solid fa-diagram-project"></i>
-            <strong>DBFly Framework Architecture</strong>
-            <span>
-              Upload the framework image as
-              <code>assets/pipeline.png</code>.
-            </span>
-          </div>
-
-          <!--
-          <img
-            class="overview-image"
-            src="assets/pipeline.png"
-            alt="Architecture of DBFly"
-          >
-          -->
-
-          <p class="caption">
-            <strong>Framework architecture.</strong>
-            The multimodal backbone receives visual observations,
-            <!-- navigation instructions, and geometric support, and produces
-            structured spatial deliberation, stopping decisions, and
-            continuous waypoints. -->
           </p>
 
         </div>
