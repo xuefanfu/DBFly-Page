@@ -15,20 +15,8 @@
   >
 
   <title>
-    DBFly | Vision-Guided Spatial Deliberation for UAV See-and-Reach Navigation
+    DBFly
   </title>
-
-  <!-- Browser tab icon -->
-  <link
-    rel="icon"
-    type="image/png"
-    href="./assets/dbfly_logo.png"
-  >
-
-  <link
-    rel="apple-touch-icon"
-    href="./assets/dbfly_logo.png"
-  >
 
   <!-- Font Awesome -->
   <link
@@ -131,12 +119,20 @@
       letter-spacing: -0.02em;
     }
 
-    .brand-logo {
-      width: 36px;
-      height: 36px;
-      display: block;
-      object-fit: contain;
+    .brand-icon {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--accent)
+      );
       border-radius: 10px;
+      box-shadow: 0 6px 16px rgba(40, 85, 217, 0.2);
     }
 
     .nav-links {
@@ -451,7 +447,7 @@
       margin: 15px 2px 0;
       color: var(--text-secondary);
       font-size: 0.96rem;
-      text-align: center;
+      text-align: justify;
     }
 
     /* =========================
@@ -658,12 +654,10 @@
   <nav class="navbar">
     <div class="container nav-inner">
 
-      <a class="brand" href="#top" aria-label="DBFly homepage">
-        <img
-          class="brand-logo"
-          src="./assets/dbfly_logo.png"
-          alt="DBFly logo"
-        >
+      <a class="brand" href="#top">
+        <span class="brand-icon">
+          <i class="fa-solid fa-helicopter"></i>
+        </span>
         <span>DBFly</span>
       </a>
 
@@ -710,18 +704,29 @@
           </p>
 
           <div class="authors">
-            <a class="author-link" href="#" target="_blank">
-              Fanfu Xue
-            </a>,
-            Author Two,
-            Author Three,
-            Author Four
+            Fanfu Xue,
+            En Yu,
+            Bohang Liu,
+            Hongjun Wang,
+            Yang Yang,
+            Xindi Wang,
+            Jiande Sun
           </div>
 
           <div class="affiliations">
-            Shandong University
+            <div>
+              School of Information Science and Engineering, Shandong University
+            </div>
+            <div>
+              Faculty of Engineering and Information Technology, University of Technology Sydney
+            </div>
+            <div>
+              School of Artificial Intelligence, Shandong University
+            </div>
+            <div>
+              School of Computer Science and Artificial Intelligence, Shandong Normal University
+            </div>
           </div>
-
           <div class="button-row">
 
             <!-- 修改为正式论文链接 -->
@@ -788,7 +793,8 @@
         </div>
 
         <div class="card content">
-          <p>UAV see-and-reach navigation requires an aerial agent to approach a language-specified target visible in its initial view and stop reliably near it. Existing methods typically map vision-language representations directly to action outputs without explicitly modeling intermediate fine-grained spatial decisions. This direct mapping causes semantic-control misalignment, leading to inconsistent maneuvers and unreliable termination. To address this issue, we propose <strong>DBFly</strong>, a vision-language waypoint prediction framework that introduces explicit <strong>vision-guided spatial deliberation</strong> before waypoint generation. Specifically, DBFly introduces a <strong>spatial maneuver decision chain</strong> that progressively performs target-direction anchoring, spatial diagnosis, and maneuver decision, enabling high-level maneuver intent to explicitly guide continuous waypoint generation. DBFly further constructs an <strong>implicit flight corridor</strong> by transforming the initial target-direction prior into a persistent geometric reference and deriving an online corridor state from the UAV's current position, thereby providing soft geometric guidance for spatial diagnosis and maneuver correction. In addition, DBFly develops a <strong>terminal-convergence-aware stopping strategy</strong> that characterizes terminal states through both target proximity and short-horizon motion convergence, enabling more reliable stopping near the target. Extensive experiments across seen, unseen-object, and unseen-scene test sets demonstrate that DBFly improves the success rate over the SOTA baseline by an average of <strong>25.07 percentage points</strong>.</p>
+          <p>UAV see-and-reach navigation requires an aerial agent to approach a language-specified target visible in its initial view and stop reliably near it. Existing methods typically map vision-language representations directly to action outputs without explicitly modeling intermediate fine-grained spatial decisions. This direct mapping causes semantic-control misalignment, leading to inconsistent maneuvers and unreliable termination. To address this issue, we propose DBFly, a vision-language waypoint prediction framework that introduces explicit vision-guided spatial deliberation before waypoint generation. Specifically, DBFly introduces a spatial maneuver decision chain that progressively performs target-direction anchoring, spatial diagnosis, and maneuver decision, enabling high-level maneuver intent to explicitly guide continuous waypoint generation. DBFly further constructs an implicit flight corridor by transforming the initial target-direction prior into a persistent geometric reference and deriving an online corridor state from the UAV's current position, thereby providing soft geometric guidance for spatial diagnosis and maneuver correction. In addition, DBFly develops a terminal-convergence-aware stopping strategy that characterizes terminal states through both target proximity and short-horizon motion convergence, enabling more reliable stopping near the target. Extensive experiments across seen, unseen-object, and unseen-scene test sets demonstrate that DBFly improves the success rate over the SOTA baseline by an average of 25.07 percentage points.
+          </p>
         </div>
 
       </div>
@@ -802,19 +808,24 @@
       <div class="container">
 
         <div class="section-header">
-          <h2 class="section-title">Overview</h2>
+          <h2 class="section-title">
+            Overview
+          </h2>
+
         </div>
 
         <div class="card">
 
           <img
             class="overview-image"
-            src="./assets/DBFly.png"
+            src="assets/DBFly.png"
             alt="Overall framework of DBFly"
           >
+         
 
           <p class="caption">
             <strong>Overall framework of DBFly.</strong>
+  
           </p>
 
         </div>
@@ -858,7 +869,7 @@
                 webkit-playsinline
               >
                 <source
-                  src="video/sim_seen.mp4"
+                  src="assets/simulation_1.mp4"
                   type="video/mp4"
                 >
 
@@ -866,11 +877,7 @@
               </video>
             </div>
 
-            <p class="video-note">
-              Closed-loop navigation demonstrating target exploration,
-              approach, and stable stopping.
-            </p>
-
+  
 
           </article>
 
@@ -890,7 +897,7 @@
                 webkit-playsinline
               >
                 <source
-                  src="video/sim_uo.mp4"
+                  src="assets/simulation_2.mp4"
                   type="video/mp4"
                 >
 
@@ -898,10 +905,6 @@
               </video>
             </div>
 
-            <p class="video-note">
-              Closed-loop navigation demonstrating directional realignment
-              and accurate target approach.
-            </p>
 
 
           </article>
@@ -922,7 +925,7 @@
                 webkit-playsinline
               >
                 <source
-                  src="video/sim_us.mp4"
+                  src="assets/simulation_3.mp4"
                   type="video/mp4"
                 >
 
@@ -930,10 +933,6 @@
               </video>
             </div>
 
-            <p class="video-note">
-              Closed-loop navigation demonstrating descent, local correction,
-              and terminal convergence.
-            </p>
 
 
           </article>
@@ -956,8 +955,8 @@
           </h2>
 
           <p class="section-description">
-            Real-world flight demonstrations showing visually guided target
-            approaching, closed-loop maneuvering, and reliable stopping.
+          Representative closed-loop flight demonstrations in
+            real-world environments.
           </p>
         </div>
 
@@ -979,7 +978,7 @@
                 webkit-playsinline
               >
                 <source
-                  src="video/flight_1.mp4"
+                  src="assets/real_world_1.mp4"
                   type="video/mp4"
                 >
 
@@ -987,10 +986,6 @@
               </video>
             </div>
 
-            <p class="video-note">
-              Real-world UAV navigation toward a language-specified target,
-              demonstrating target approaching and reliable navigation termination.
-            </p>
 
 
           </article>
@@ -1011,7 +1006,7 @@
                 webkit-playsinline
               >
                 <source
-                  src="video/flight_2.mp4"
+                  src="assets/real_world_1.mp4"
                   type="video/mp4"
                 >
 
@@ -1019,10 +1014,7 @@
               </video>
             </div>
 
-            <p class="video-note">
-              Real-world navigation under a different target configuration,
-              demonstrating closed-loop correction and terminal convergence.
-            </p>
+
 
 
           </article>
@@ -1054,7 +1046,7 @@
 
           <div class="card card-hover metric-card">
             <div class="metric-value">
-              +26.69%
+              +25.07
             </div>
             <div class="metric-label">
               Average SR Improvement
@@ -1072,19 +1064,19 @@
 
           <div class="card card-hover metric-card">
             <div class="metric-value">
-              Reliable
-            </div>
-            <div class="metric-label">
-              Target-Side Termination
-            </div>
-          </div>
-
-          <div class="card card-hover metric-card">
-            <div class="metric-value">
               Strong
             </div>
             <div class="metric-label">
-              Cross-Setting Generalization
+              Maneuver
+            </div>
+          </div>
+          
+          <div class="card card-hover metric-card">
+            <div class="metric-value">
+              Reliable
+            </div>
+            <div class="metric-label">
+              Termination
             </div>
           </div>
 
