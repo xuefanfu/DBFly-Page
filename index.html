@@ -694,9 +694,9 @@
             UAV See-and-Reach Navigation
           </h1>
 
-          <div class="method-name">
+          <!-- <div class="method-name">
             DBFly
-          </div>
+          </div> -->
 
           <p class="hero-subtitle">
             <!-- A vision-language waypoint prediction framework that explicitly
@@ -704,9 +704,7 @@
           </p>
 
           <div class="authors">
-            <a class="author-link" href="#" target="_blank">
-              Fanfu Xue
-            </a>,
+            Fanfu Xue,
             En Yu,
             Bohang Liu,
             Hongjun Wang,
@@ -790,10 +788,10 @@
             Overview
           </h2>
 
-          <p class="section-description">
+          <!-- <p class="section-description">
             DBFly explicitly deliberates before generating executable
             continuous waypoints for UAV see-and-reach navigation.
-          </p>
+          </p> -->
         </div>
 
         <div class="card">
@@ -803,7 +801,7 @@
             <strong>DBFly Framework Architecture</strong>
             <span>
               Upload the overview image as
-              <code>assets/pipeline.png</code>.
+              <code>assets/DBFly.png</code>.
             </span>
           </div>
 
@@ -816,11 +814,8 @@
           -->
 
           <p class="caption">
-            <strong>Overview of DBFly.</strong>
-            The multimodal backbone receives visual observations,
-            <!-- navigation instructions, and geometric support, and produces
-            structured spatial deliberation, stopping decisions, and
-            continuous waypoints. -->
+            <strong>Overall framework of DBFly.</strong>
+  
           </p>
 
         </div>
@@ -851,7 +846,7 @@
 
           <p>
             
-UAV see-and-reach navigation requires an aerial agent to approach a language-specified target visible in its initial view and stop reliably near it. Existing methods typically map vision-language representations directly to action outputs without explicitly modeling intermediate fine-grained spatial decisions. This direct mapping causes semantic-control misalignment, leading to inconsistent maneuvers and unreliable termination. To address this issue, we propose <strong>DBFly</strong>strong>, a vision-language waypoint prediction framework that introduces explicit vision-guided spatial deliberation before waypoint generation. Specifically, DBFly introduces a spatial maneuver decision chain that progressively performs target-direction anchoring, spatial diagnosis, and maneuver decision, enabling high-level maneuver intent to explicitly guide continuous waypoint generation. DBFly further constructs an implicit flight corridor by transforming the initial target-direction prior into a persistent geometric reference and deriving an online corridor state from the UAV's current position, thereby providing soft geometric guidance for spatial diagnosis and maneuver correction. In addition, DBFly develops a terminal-convergence-aware stopping strategy that characterizes terminal states through both target proximity and short-horizon motion convergence, enabling more reliable stopping near the target. Extensive experiments across seen, unseen-object, and unseen-scene test sets demonstrate that DBFly improves the success rate over the SOTA baseline by an average of 25.07 percentage points.
+UAV see-and-reach navigation requires an aerial agent to approach a language-specified target visible in its initial view and stop reliably near it. Existing methods typically map vision-language representations directly to action outputs without explicitly modeling intermediate fine-grained spatial decisions. This direct mapping causes semantic-control misalignment, leading to inconsistent maneuvers and unreliable termination. To address this issue, we propose <strong>DBFly</strong>, a vision-language waypoint prediction framework that introduces explicit vision-guided spatial deliberation before waypoint generation. Specifically, DBFly introduces a spatial maneuver decision chain that progressively performs target-direction anchoring, spatial diagnosis, and maneuver decision, enabling high-level maneuver intent to explicitly guide continuous waypoint generation. DBFly further constructs an implicit flight corridor by transforming the initial target-direction prior into a persistent geometric reference and deriving an online corridor state from the UAV's current position, thereby providing soft geometric guidance for spatial diagnosis and maneuver correction. In addition, DBFly develops a terminal-convergence-aware stopping strategy that characterizes terminal states through both target proximity and short-horizon motion convergence, enabling more reliable stopping near the target. Extensive experiments across seen, unseen-object, and unseen-scene test sets demonstrate that DBFly improves the success rate over the SOTA baseline by an average of 25.07 percentage points.
           </p>
 
         </div>
@@ -903,11 +898,6 @@ UAV see-and-reach navigation requires an aerial agent to approach a language-spe
               </video>
             </div>
 
-            <p class="video-note">
-              Closed-loop navigation demonstrating target exploration,
-              approach, and stable stopping.
-            </p>
-
 
           </article>
 
@@ -935,10 +925,6 @@ UAV see-and-reach navigation requires an aerial agent to approach a language-spe
               </video>
             </div>
 
-            <p class="video-note">
-              Closed-loop navigation demonstrating directional realignment
-              and accurate target approach.
-            </p>
 
 
           </article>
@@ -959,7 +945,7 @@ UAV see-and-reach navigation requires an aerial agent to approach a language-spe
                 webkit-playsinline
               >
                 <source
-                  src="video/sim_us.mp4"
+                  src="assets/simulation_3.mp4"
                   type="video/mp4"
                 >
 
@@ -967,10 +953,6 @@ UAV see-and-reach navigation requires an aerial agent to approach a language-spe
               </video>
             </div>
 
-            <p class="video-note">
-              Closed-loop navigation demonstrating descent, local correction,
-              and terminal convergence.
-            </p>
 
 
           </article>
